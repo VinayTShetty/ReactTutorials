@@ -18,11 +18,11 @@ const IMAGES = {
 };
 
 const [mealsmenu, setReviews] = useState([
-  { title: 'Empire Restaurant', menu: "Pizza", body: 'lorem ipsum',image:IMAGES.image1 ,key: '1' },
-  { title: 'King Restaurant', menu: "Meals", body: 'lorem ipsum', image:IMAGES.image2 ,key: '2' },
-  { title: 'ABC Restaurant', menu: "PotatoFries", body: 'lorem ipsum',image:IMAGES.image3 , key: '3' },
-  { title: 'Ginger Restaurant', menu: "Sandwich", body: 'lorem ipsum', image:IMAGES.image4 ,key: '4' },
-  { title: 'Tasty Restuarant', menu: "Chicken", body: 'lorem ipsum', image:IMAGES.image5 ,key: '5' },
+  { title: 'Empire Restaurant', menu: "Pizza", body: 'lorem ipsum 1',image:IMAGES.image1 ,key: '1' },
+  { title: 'King Restaurant', menu: "Meals", body: 'lorem ipsum 2', image:IMAGES.image2 ,key: '2' },
+  { title: 'ABC Restaurant', menu: "PotatoFries", body: 'lorem ipsum 3',image:IMAGES.image3 , key: '3' },
+  { title: 'Ginger Restaurant', menu: "Sandwich", body: 'lorem ipsum 4', image:IMAGES.image4 ,key: '4' },
+  { title: 'Tasty Restuarant', menu: "Chicken", body: 'lorem ipsum 5', image:IMAGES.image5 ,key: '5' },
 ]);
 
 return (
@@ -50,7 +50,7 @@ return (
               <Text style={styles.name}>{item.title}</Text>
               <Text style={styles.position}>{item.menu}</Text>
               <TouchableOpacity style={styles.followButton} onPress={()=> 
-              console.log("vinay")
+                props.navigation.navigate('ReviewDetails',item)
               }>
                 <Text style={styles.followButtonText}>Detials</Text>  
               </TouchableOpacity>
