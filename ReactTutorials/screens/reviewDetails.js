@@ -4,103 +4,80 @@ import { globalStyles } from '../styles/global';
 
 export default function ReviewDetails({navigation}) {
   return (
-    <View style={styles.container}>
-    <Text>{navigation.getParam('title')}</Text>
-    <Image 
-    style={styles.userImage}
+    <View style={styles.card}>
+    <Text style={styles.paragraph}>{navigation.getParam('menu')}</Text>
+    <Image  style={styles.userImage}
     source={navigation.getParam('image')}/>
+   </View>
 
-    </View>
+//    <SafeAreaView style={styles.container}>
+//    <View style={styles.container}>
+//      <Card title="Local Modules">
+//        {/*react-native-elements Card*/}
+//        <Text style={styles.paragraph}>
+//          React Native Card View for Android and IOS using
+//          "react-native-elements"
+//        </Text>
+//      </Card>
+//    </View>
+//  </SafeAreaView>
+
+
+
+
+
   );
+  // return (
+  //   <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+  //     <View style={{ backgroundColor: "#eee", borderRadius: 10, overflow: "hidden" }}>
+  //       <View>
+  //         <Image
+  //           source={navigation.getParam('image')}
+  //           style={{
+  //             height: 250,
+  //             width: 300,
+  //             alignSelf:'center',
+  //             marginBottom:10
+  //           }}
+  //         />
+  //       </View>
+  //       <View style={{ padding: 10, width: 155 }}>
+  //         <Text>Title</Text>
+  //         <Text style={{ color: "#777", paddingTop: 5 }}>
+  //           Description of the image
+  //         </Text>
+  //       </View>
+  //     </View>
+  //   </View>
+  // );
 }
 
 const styles = StyleSheet.create({
-  container:{
-    flex:5,
-    marginTop:20,
-  },
-  list: {
-    paddingHorizontal: 5,
-    backgroundColor:"#E6E6E6",
-  },
-  listContainer:{
-   alignItems:'center'
-  },
-  /******** card **************/
-  card:{
-    shadowColor: '#00000021',
-    shadowOffset: {
-      width: 900,
-      height: 10,
-    },
-    shadowOpacity: 0.90,
-    shadowRadius: 9.49,
-    elevation: 20,
-
-    marginVertical: 25,
-    backgroundColor:"white",
-    flexBasis: '96%',
-    marginHorizontal: 5,
-  },
-  cardFooter: {
-    paddingVertical: 17,
-    paddingHorizontal: 16,
-    borderTopLeftRadius: 1,
-    borderTopRightRadius: 1,
-    flexDirection: 'row',
-    alignItems:"center", 
-    justifyContent:"center"
-  },
-  cardContent: {
-    paddingVertical: 12.5,
-    paddingHorizontal: 16,
-  },
-  cardHeader:{
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingTop: 12.5,
-    paddingBottom: 25,
-    paddingHorizontal: 16,
-    borderBottomLeftRadius: 1,
-    borderBottomRightRadius: 1,
-  },
   userImage:{
     height: 150,
     width: 300,
- 
     alignSelf:'center',
     borderColor:"#DCDCDC",
     borderWidth:3,
   },
-  name:{
-    fontSize:18,
-    flex:1,
-    alignSelf:'center',
-    color:"#008080",
-    fontWeight:'bold'
+  paragraph: {
+    marginBottom:10,
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#34495e',
   },
-  position:{
-    fontSize:14,
-    flex:1,
-    alignSelf:'center',
-    color:"#696969"
-  },
-  followButton: {
-    marginTop:10,
-    height:35,
-    width:100,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius:30,
-    backgroundColor: "#00BFFF",
-  },
-  followButtonText:{
-    color: "#FFFFFF",
-    fontSize:20,
-  },
-  icon:{
-    height: 20,
-    width: 20, 
+  card: {
+    shadowColor: 'black',
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 6,
+    shadowOpacity: 0.26,
+    elevation: 8,
+    backgroundColor: 'white',
+    padding: 5,
+    borderRadius: 10
   }
+ 
+  
+  
 });   
