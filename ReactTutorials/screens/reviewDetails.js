@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text,Image } from 'react-native';
 import { globalStyles } from '../styles/global';
+import { AntDesign } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 
 export default function ReviewDetails({navigation}) {
   return (
@@ -8,6 +10,10 @@ export default function ReviewDetails({navigation}) {
     <Text style={styles.paragraph}>{navigation.getParam('menu')}</Text>
     <Image  style={styles.userImage}source={navigation.getParam('image')}/>
     <Text style={styles.description}>{navigation.getParam('body')}</Text>
+    <View style={styles.iconcontainer}>
+    <AntDesign name="heart" size={24} color="red" />
+    <FontAwesome name="pencil" size={24} color="blue" />
+    </View>
    </View>
 
 //    <SafeAreaView style={styles.container}>
@@ -83,8 +89,18 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 5,
     borderRadius: 10
+  },
+  iconcontainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems:'center',
+    padding: 10,
+    flexDirection:'row',
+    alignItems:'center'
+
   }
- 
-  
-  
-});   
+});
+
+
+
+// https://stackoverflow.com/questions/60500705/react-native-vertically-and-horizontally-align-image-and-text-in-same-row
