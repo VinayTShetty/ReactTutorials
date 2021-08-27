@@ -6,6 +6,10 @@ export default function ReviewDetails({navigation}) {
   return (
     <View style={styles.container}>
     <Text>{navigation.getParam('title')}</Text>
+    <Image 
+    style={styles.userImage}
+    source={navigation.getParam('image')}/>
+
     </View>
   );
 }
