@@ -10,12 +10,11 @@ const pressHandler=()=>{
 
 
 const IMAGES = {
-  image1: require('../assets/adaptive-icon.png'),
-  image2: require('../assets/adaptive-icon.png'),
-  image3: require('../assets/adaptive-icon.png'),
-  image4: require('../assets/adaptive-icon.png'),
-  image5: require('../assets/adaptive-icon.png'),
-  image6: require('../assets/adaptive-icon.png'),
+  image1: require('../assets/pizza.png'),
+  image2: require('../assets/meals.png'),
+  image3: require('../assets/potatofries.png'),
+  image4: require('../assets/sandwich.png'),
+  image5: require('../assets/chicken.png'),
 };
 
 const [reviews, setReviews] = useState([
