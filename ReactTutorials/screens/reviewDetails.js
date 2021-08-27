@@ -2,12 +2,10 @@ import React from 'react';
 import { StyleSheet, View, Text,Image } from 'react-native';
 import { globalStyles } from '../styles/global';
 
-export default function ReviewDetails(props) {
+export default function ReviewDetails({navigation}) {
   return (
     <View style={styles.container}>
-    <Image 
-    style={styles.userImage}
-    source={props.Image}/>
+    <Text>{navigation.getParam('title')}</Text>
     </View>
   );
 }
