@@ -15,47 +15,7 @@ export default function ReviewDetails({navigation}) {
     <FontAwesome name="pencil" size={24} color="blue" />
     </View>
    </View>
-
-//    <SafeAreaView style={styles.container}>
-//    <View style={styles.container}>
-//      <Card title="Local Modules">
-//        {/*react-native-elements Card*/}
-//        <Text style={styles.paragraph}>
-//          React Native Card View for Android and IOS using
-//          "react-native-elements"
-//        </Text>
-//      </Card>
-//    </View>
-//  </SafeAreaView>
-
-
-
-
-
   );
-  // return (
-  //   <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-  //     <View style={{ backgroundColor: "#eee", borderRadius: 10, overflow: "hidden" }}>
-  //       <View>
-  //         <Image
-  //           source={navigation.getParam('image')}
-  //           style={{
-  //             height: 250,
-  //             width: 300,
-  //             alignSelf:'center',
-  //             marginBottom:10
-  //           }}
-  //         />
-  //       </View>
-  //       <View style={{ padding: 10, width: 155 }}>
-  //         <Text>Title</Text>
-  //         <Text style={{ color: "#777", paddingTop: 5 }}>
-  //           Description of the image
-  //         </Text>
-  //       </View>
-  //     </View>
-  //   </View>
-  // );
 }
 
 const styles = StyleSheet.create({
@@ -100,7 +60,3 @@ const styles = StyleSheet.create({
 
   }
 });
-
-
-
-// https://stackoverflow.com/questions/60500705/react-native-vertically-and-horizontally-align-image-and-text-in-same-row
