@@ -18,7 +18,7 @@ const IMAGES = {
 };
 
 const [mealsmenu, setReviews] = useState([
-  { title: 'Empire Restaurant', menu: "Pizza", body: 'lorem ipsum 1 ',image:IMAGES.image1 ,key: '1' },
+  { title: 'Empire Restaurant', menu: "Pizza", body: 'Take a dough kneading plate and add all-purpose flour to it. Next, add salt and baking powder in it and sieve the flour once. Then, make a well in the centre and add 1 teaspoon of oil to it. On the other hand, take a little warm water and mix the yeast in it along with 1 teaspoon of sugar. Mix well and keep aside for 10-15 minutes. The yeast will rise in the meantime. Once the yeast has risen, add it to the flour knead the dough nicely using some water. Keep this dough aside for 4-6 hours. Then knead the dough once again. Now, the pizza dough is ready ',image:IMAGES.image1 ,key: '1' },
   { title: 'King Restaurant', menu: "Meals", body: 'lorem ipsum 2', image:IMAGES.image2 ,key: '2' },
   { title: 'ABC Restaurant', menu: "PotatoFries", body: 'lorem ipsum 3',image:IMAGES.image3 , key: '3' },
   { title: 'Ginger Restaurant', menu: "Sandwich", body: 'lorem ipsum 4', image:IMAGES.image4 ,key: '4' },

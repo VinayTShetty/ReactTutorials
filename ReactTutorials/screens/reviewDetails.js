@@ -7,7 +7,7 @@ export default function ReviewDetails({navigation}) {
     <View style={styles.card}>
     <Text style={styles.paragraph}>{navigation.getParam('menu')}</Text>
     <Image  style={styles.userImage}source={navigation.getParam('image')}/>
-    <Text style={styles.paragraph}>{navigation.getParam('body')}</Text>
+    <Text style={styles.description}>{navigation.getParam('body')}</Text>
    </View>
 
 //    <SafeAreaView style={styles.container}>
@@ -63,6 +63,13 @@ const styles = StyleSheet.create({
   paragraph: {
     marginBottom:10,
     fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#34495e',
+  },
+  description: {
+    marginBottom:10,
+    fontSize: 8,
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#34495e',
