@@ -17,7 +17,7 @@ const IMAGES = {
   image5: require('../assets/chicken.png'),
 };
 
-const [reviews, setReviews] = useState([
+const [mealsmenu, setReviews] = useState([
   { title: 'Empire Restaurant', menu: "Pizza", body: 'lorem ipsum',image:IMAGES.image1 ,key: '1' },
   { title: 'King Restaurant', menu: "Meals", body: 'lorem ipsum', image:IMAGES.image2 ,key: '2' },
   { title: 'ABC Restaurant', menu: "PotatoFries", body: 'lorem ipsum',image:IMAGES.image3 , key: '3' },
@@ -26,21 +26,140 @@ const [reviews, setReviews] = useState([
 ]);
 
 return (
-  <View style={globalStyles.container}>
-    <FlatList data={reviews} renderItem={({ item }) => (
-      <TouchableOpacity onPress={() => navigation.navigate('ReviewDetails', item)}>
-        <Text style={globalStyles.titleText}>{ item.title }</Text>
-      </TouchableOpacity>
-    )} />
-  </View>
+
+  <View style={styles.container}>
+  <FlatList style={styles.list}
+    contentContainerStyle={styles.listContainer}
+    data={mealsmenu}
+    horizontal={false}
+    numColumns={1}
+    keyExtractor= {(item) => {
+      return item.id;
+    }}
+    renderItem={({item}) => {
+      return (
+        <TouchableOpacity style={styles.card} onPress={() => {
+          console.log("VInay")
+        }}>
+          <Image 
+          style={styles.userImage}
+           source={item.image}
+           />
+          <View style={styles.cardFooter}>
+            <View style={{alignItems:"center", justifyContent:"center"}}>
+              <Text style={styles.name}>{item.title}</Text>
+              <Text style={styles.position}>{item.menu}</Text>
+              <TouchableOpacity style={styles.followButton} onPress={()=> 
+              console.log("vinay")
+              }>
+                <Text style={styles.followButtonText}>Detials</Text>  
+              </TouchableOpacity>
+            </View>
+          </View>
+        </TouchableOpacity>
+      )
+    }}/>
+</View>
+
 );
 }
 
+// const styles = StyleSheet.create({
+//   container: {
+//     padding: 24,
+//   },
+// });
+
 const styles = StyleSheet.create({
-  container: {
-    padding: 24,
+  container:{
+    flex:5,
+    marginTop:20,
   },
-});
+  list: {
+    paddingHorizontal: 5,
+    backgroundColor:"#E6E6E6",
+  },
+  listContainer:{
+   alignItems:'center'
+  },
+  /******** card **************/
+  card:{
+    shadowColor: '#00000021',
+    shadowOffset: {
+      width: 900,
+      height: 10,
+    },
+    shadowOpacity: 0.90,
+    shadowRadius: 9.49,
+    elevation: 20,
+
+    marginVertical: 25,
+    backgroundColor:"white",
+    flexBasis: '96%',
+    marginHorizontal: 5,
+  },
+  cardFooter: {
+    paddingVertical: 17,
+    paddingHorizontal: 16,
+    borderTopLeftRadius: 1,
+    borderTopRightRadius: 1,
+    flexDirection: 'row',
+    alignItems:"center", 
+    justifyContent:"center"
+  },
+  cardContent: {
+    paddingVertical: 12.5,
+    paddingHorizontal: 16,
+  },
+  cardHeader:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingTop: 12.5,
+    paddingBottom: 25,
+    paddingHorizontal: 16,
+    borderBottomLeftRadius: 1,
+    borderBottomRightRadius: 1,
+  },
+  userImage:{
+    height: 150,
+    width: 300,
+ 
+    alignSelf:'center',
+    borderColor:"#DCDCDC",
+    borderWidth:3,
+  },
+  name:{
+    fontSize:18,
+    flex:1,
+    alignSelf:'center',
+    color:"#008080",
+    fontWeight:'bold'
+  },
+  position:{
+    fontSize:14,
+    flex:1,
+    alignSelf:'center',
+    color:"#696969"
+  },
+  followButton: {
+    marginTop:10,
+    height:35,
+    width:100,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius:30,
+    backgroundColor: "#00BFFF",
+  },
+  followButtonText:{
+    color: "#FFFFFF",
+    fontSize:20,
+  },
+  icon:{
+    height: 20,
+    width: 20, 
+  }
+});    
 
 
 
