@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
-import HomeHeader from './components/HomeHeader';
+import HomeHeader from './headerscreen/HomeHeader';
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -34,9 +34,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   content: {
-    padding: 40,
+    padding: 30,
   },
   list: {
-    marginTop: 20,
+    marginTop: 0,
   },
 });
