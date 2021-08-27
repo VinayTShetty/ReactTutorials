@@ -18,7 +18,7 @@ const IMAGES = {
 };
 
 const [mealsmenu, setReviews] = useState([
-  { title: 'Empire Restaurant', menu: "Pizza", body: 'lorem ipsum 1  ',image:IMAGES.image1 ,key: '1' },
+  { title: 'Empire Restaurant', menu: "Pizza", body: 'lorem ipsum 1 ',image:IMAGES.image1 ,key: '1' },
   { title: 'King Restaurant', menu: "Meals", body: 'lorem ipsum 2', image:IMAGES.image2 ,key: '2' },
   { title: 'ABC Restaurant', menu: "PotatoFries", body: 'lorem ipsum 3',image:IMAGES.image3 , key: '3' },
   { title: 'Ginger Restaurant', menu: "Sandwich", body: 'lorem ipsum 4', image:IMAGES.image4 ,key: '4' },

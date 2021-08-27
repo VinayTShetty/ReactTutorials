@@ -6,8 +6,8 @@ export default function ReviewDetails({navigation}) {
   return (
     <View style={styles.card}>
     <Text style={styles.paragraph}>{navigation.getParam('menu')}</Text>
-    <Image  style={styles.userImage}
-    source={navigation.getParam('image')}/>
+    <Image  style={styles.userImage}source={navigation.getParam('image')}/>
+    <Text style={styles.paragraph}>{navigation.getParam('body')}</Text>
    </View>
 
 //    <SafeAreaView style={styles.container}>
