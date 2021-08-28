@@ -22,6 +22,8 @@ export default function ReviewDetails({navigation}) {
 
   return (
     <View style={globalStyles.container}>
+
+    <View style={styles.card}>
     <Text style={styles.paragraph}>{navigation.getParam('menu')}</Text>
     <Image  style={styles.userImage}source={navigation.getParam('image')}/>
     <Text style={styles.description}>{navigation.getParam('body')}</Text>
@@ -29,11 +31,14 @@ export default function ReviewDetails({navigation}) {
     <AntDesign name="heart" size={24} color="red" />
     <FontAwesome name="pencil" size={24} color="blue" />
     </View>
+    </View>
+    
     <Text style={styles.comments}>Comments</Text>
     <FlatList data={reviews} renderItem={({ item }) => (
       <TouchableOpacity onPress={() => navigation.navigate('ReviewDetails', item)}>
         <Card>
           <Text style={globalStyles.titleText}>{ item.title }</Text>
+          <Text style={globalStyles.titleText}>{ item.body }</Text>
         </Card>
       </TouchableOpacity>
     )} />
@@ -62,7 +67,7 @@ const styles = StyleSheet.create({
   },
   description: {
     marginBottom:10,
-    fontSize: 10,
+    fontSize: 12,
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#34495e',
