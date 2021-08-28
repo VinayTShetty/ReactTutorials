@@ -6,7 +6,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import Card from '../shared/card';
 
 export default function ReviewDetails({navigation}) {
-
+  const [modalOpen, setModalOpen] = useState(false);
   const [reviews, setReviews] = useState([
     { title: 'Demo, Breath of Fresh Air', rating: 5, body: 'lorem ipsum', key: '1' },
     { title: 'Gotta Catch Them All (again)', rating: 4, body: 'lorem ipsum', key: '2' },
@@ -22,7 +22,7 @@ export default function ReviewDetails({navigation}) {
 
   return (
     <View style={globalStyles.container}>
-    <Modal visible={true}>
+    <Modal visible={modalOpen}>
     <View style={styles.modalContent}>
     <Text>Demo Modal </Text>
     </View>
@@ -31,10 +31,12 @@ export default function ReviewDetails({navigation}) {
     <Text style={styles.paragraph}>{navigation.getParam('menu')}</Text>
     <Image  style={styles.userImage}source={navigation.getParam('image')}/>
     <Text style={styles.description}>{navigation.getParam('body')}</Text>
-    <View style={styles.iconcontainer}>
+    <TouchableOpacity onPress={() =>setModalOpen(true)}>
+    <View style={styles.iconcontainer} >
     <AntDesign name="heart" size={24} color="red" />
     <FontAwesome name="pencil" size={24} color="blue" />
     </View>
+    </TouchableOpacity>    
     </View>
     
     <Text style={styles.comments}>Comments</Text>
