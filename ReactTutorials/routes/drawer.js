@@ -16,3 +16,7 @@ const RootDrawerNavigator = createDrawerNavigator({
 });
 
 export default createAppContainer(RootDrawerNavigator);
+
+
+
+//Side bar name should be changed here.

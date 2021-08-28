@@ -5,7 +5,7 @@ const screens = {
   About: {
     screen: About,
     navigationOptions: {
-      title: 'About'
+      title: 'About ToolBar'
     },
   },
 }
