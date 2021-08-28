@@ -3,6 +3,7 @@ import { StyleSheet, View, Text,Image,FlatList,TouchableOpacity } from 'react-na
 import { globalStyles } from '../styles/global';
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import Card from '../shared/card';
 
 export default function ReviewDetails({navigation}) {
 
@@ -13,11 +14,14 @@ export default function ReviewDetails({navigation}) {
     { title: 'Not So "Final" Fantasy', rating: 3, body: 'lorem ipsum', key: '4' },
     { title: 'Not So "Final" Fantasy', rating: 3, body: 'lorem ipsum', key: '5' },
     { title: 'Not So "Final" Fantasy', rating: 3, body: 'lorem ipsum', key: '6' },
+    { title: 'Not So "Final" Fantasy', rating: 3, body: 'lorem ipsum', key: '7' },
+    { title: 'Not So "Final" Fantasy', rating: 3, body: 'lorem ipsum', key: '8' },
+    { title: 'Not So "Final" Fantasy', rating: 3, body: 'lorem ipsum', key: '9' },
   ]);
 
 
   return (
-    <View style={styles.card}>
+    <View style={globalStyles.container}>
     <Text style={styles.paragraph}>{navigation.getParam('menu')}</Text>
     <Image  style={styles.userImage}source={navigation.getParam('image')}/>
     <Text style={styles.description}>{navigation.getParam('body')}</Text>
@@ -26,17 +30,14 @@ export default function ReviewDetails({navigation}) {
     <FontAwesome name="pencil" size={24} color="blue" />
     </View>
     <Text style={styles.comments}>Comments</Text>
-    <View style={styles.card}>
     <FlatList data={reviews} renderItem={({ item }) => (
       <TouchableOpacity onPress={() => navigation.navigate('ReviewDetails', item)}>
+        <Card>
           <Text style={globalStyles.titleText}>{ item.title }</Text>
-          <Text style={globalStyles.titleText}>{ item.body }</Text>
-          <Text style={globalStyles.titleText}></Text>
+        </Card>
       </TouchableOpacity>
     )} />
-    </View>
-
-   </View>
+  </View>
    
   );
 }
