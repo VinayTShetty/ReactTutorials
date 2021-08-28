@@ -1,10 +1,18 @@
-import React from 'react';
-import { StyleSheet, View, Text,Image } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, Text,Image,FlatList,TouchableOpacity } from 'react-native';
 import { globalStyles } from '../styles/global';
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 
 export default function ReviewDetails({navigation}) {
+
+  const [reviews, setReviews] = useState([
+    { title: 'Zelda, Breath of Fresh Air', rating: 5, body: 'lorem ipsum', key: '1' },
+    { title: 'Gotta Catch Them All (again)', rating: 4, body: 'lorem ipsum', key: '2' },
+    { title: 'Not So "Final" Fantasy', rating: 3, body: 'lorem ipsum', key: '3' },
+  ]);
+
+
   return (
     <View style={styles.card}>
     <Text style={styles.paragraph}>{navigation.getParam('menu')}</Text>
@@ -14,9 +22,19 @@ export default function ReviewDetails({navigation}) {
     <AntDesign name="heart" size={24} color="red" />
     <FontAwesome name="pencil" size={24} color="blue" />
     </View>
+    <FlatList data={reviews} renderItem={({ item }) => (
+      <TouchableOpacity onPress={() => navigation.navigate('ReviewDetails', item)}>
+       
+          <Text style={globalStyles.titleText}>{ item.title }</Text>
+       
+      </TouchableOpacity>
+    )} />
    </View>
   );
 }
+
+
+
 
 const styles = StyleSheet.create({
   userImage:{
