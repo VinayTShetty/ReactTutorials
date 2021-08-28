@@ -27,7 +27,9 @@ export default function ReviewDetails({navigation}) {
 
   return (
     <View style={globalStyles.container}>
-    <Modal  visible={modalOpen}>
+    <Modal  visible={modalOpen}
+    transparent={true}
+    >
     <View style={styles.viewWrapper}>
     <View style={styles.modalView}>
         <TextInput placeholder="Enter something..." 
