@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text,Image,FlatList,TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text,Image,FlatList,TouchableOpacity,Modal } from 'react-native';
 import { globalStyles } from '../styles/global';
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
@@ -22,7 +22,11 @@ export default function ReviewDetails({navigation}) {
 
   return (
     <View style={globalStyles.container}>
-
+    <Modal visible={true}>
+    <View style={styles.modalContent}>
+    <Text>Demo Modal </Text>
+    </View>
+    </Modal>
     <View style={styles.card}>
     <Text style={styles.paragraph}>{navigation.getParam('menu')}</Text>
     <Image  style={styles.userImage}source={navigation.getParam('image')}/>
@@ -98,4 +102,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'black',
   },
+  modalContent: {
+    flex: 1,
+  }
 });
