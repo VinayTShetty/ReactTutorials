@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text,Image,FlatList,TouchableOpacity,Modal, Button } from 'react-native';
+import { StyleSheet, View, Text,Image,FlatList,TouchableOpacity,Modal, Button ,Dimensions,TextInput} from 'react-native';
 import { globalStyles } from '../styles/global';
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import Card from '../shared/card';
 
+const { width } = Dimensions.get("window");
 export default function ReviewDetails({navigation}) {
+  const [inputValue, setInputValue] = useState("");
+  const toggleModalVisibility = () => {
+    setModalVisible(!isModalVisible);
+};
   const [modalOpen, setModalOpen] = useState(false);
   const [reviews, setReviews] = useState([
     { title: 'Demo, Breath of Fresh Air', rating: 5, body: 'lorem ipsum', key: '1' },
@@ -22,11 +27,17 @@ export default function ReviewDetails({navigation}) {
 
   return (
     <View style={globalStyles.container}>
-    <Modal visible={modalOpen}>
-    <View style={styles.modalContent}>
-    <Text>Demo Modal </Text>
-    <Button title="Close" onPress={() =>setModalOpen(false)} />
+    <Modal  visible={modalOpen}>
+    <View style={styles.viewWrapper}>
+    <View style={styles.modalView}>
+        <TextInput placeholder="Enter something..." 
+                   value={inputValue} style={styles.textInput} 
+                   onChangeText={(value) => setInputValue(value)} />
+
+        {/** This button is responsible to close the modal */}
+        <Button title="Close" onPress={() =>setModalOpen(false)} />
     </View>
+</View>
     </Modal>
     <View style={styles.card}>
     <Text style={styles.paragraph}>{navigation.getParam('menu')}</Text>
@@ -107,5 +118,33 @@ const styles = StyleSheet.create({
   },
   modalContent: {
     flex: 1,
-  }
+  }, viewWrapper: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.2)",
+},
+modalView: {
+    alignItems: "center",
+    justifyContent: "center",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    elevation: 5,
+    transform: [{ translateX: -(width * 0.4) }, 
+                { translateY: -90 }],
+    height: 180,
+    width: width * 0.8,
+    backgroundColor: "#fff",
+    borderRadius: 7,
+},
+textInput: {
+    width: "80%",
+    borderRadius: 5,
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderColor: "rgba(0, 0, 0, 0.2)",
+    borderWidth: 1,
+    marginBottom: 8,
+},
 });
