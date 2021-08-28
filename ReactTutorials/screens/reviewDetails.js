@@ -22,14 +22,16 @@ export default function ReviewDetails({navigation}) {
     <AntDesign name="heart" size={24} color="red" />
     <FontAwesome name="pencil" size={24} color="blue" />
     </View>
+    <View style={styles.card}>
     <FlatList data={reviews} renderItem={({ item }) => (
       <TouchableOpacity onPress={() => navigation.navigate('ReviewDetails', item)}>
-       
           <Text style={globalStyles.titleText}>{ item.title }</Text>
-       
       </TouchableOpacity>
     )} />
+    </View>
+
    </View>
+   
   );
 }
 
