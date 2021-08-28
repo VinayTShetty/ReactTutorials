@@ -7,7 +7,8 @@ import Card from '../shared/card';
 
 const { width } = Dimensions.get("window");
 export default function ReviewDetails({navigation}) {
-  const [inputValue, setInputValue] = useState("");
+  const [authorname, setAuthorName] = useState("");
+  const [comment, setComment] = useState("");
   const toggleModalVisibility = () => {
     setModalVisible(!isModalVisible);
 };
@@ -32,9 +33,12 @@ export default function ReviewDetails({navigation}) {
     >
     <View style={styles.viewWrapper}>
     <View style={styles.modalView}>
-        <TextInput placeholder="Enter something..." 
-                   value={inputValue} style={styles.textInput} 
+        <TextInput placeholder="Author name" 
+                   value={authorname} style={styles.textInput} 
                    onChangeText={(value) => setInputValue(value)} />
+                   <TextInput placeholder="Comment" 
+                   value={comment} style={styles.textInput} 
+                   onChangeText={(value) => setComment(value)} />
 
         {/** This button is responsible to close the modal */}
         <Button title="Close" onPress={() =>setModalOpen(false)} />
