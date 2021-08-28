@@ -8,7 +8,7 @@ import Card from '../shared/card';
 export default function ReviewDetails({navigation}) {
 
   const [reviews, setReviews] = useState([
-    { title: 'Zelda, Breath of Fresh Air', rating: 5, body: 'lorem ipsum', key: '1' },
+    { title: 'Demo, Breath of Fresh Air', rating: 5, body: 'lorem ipsum', key: '1' },
     { title: 'Gotta Catch Them All (again)', rating: 4, body: 'lorem ipsum', key: '2' },
     { title: 'Not So "Final" Fantasy', rating: 3, body: 'lorem ipsum', key: '3' },
     { title: 'Not So "Final" Fantasy', rating: 3, body: 'lorem ipsum', key: '4' },
@@ -52,22 +52,22 @@ export default function ReviewDetails({navigation}) {
 
 const styles = StyleSheet.create({
   userImage:{
-    height: 150,
+    height: 120,
     width: 300,
     alignSelf:'center',
     borderColor:"#DCDCDC",
     borderWidth:3,
   },
   paragraph: {
-    marginBottom:10,
-    fontSize: 18,
+    marginBottom:1,
+    fontSize: 15,
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#34495e',
   },
   description: {
     marginBottom:10,
-    fontSize: 12,
+    fontSize: 10,
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#34495e',
