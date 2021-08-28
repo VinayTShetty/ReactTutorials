@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text,Image,FlatList,TouchableOpacity,Modal } from 'react-native';
+import { StyleSheet, View, Text,Image,FlatList,TouchableOpacity,Modal, Button } from 'react-native';
 import { globalStyles } from '../styles/global';
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
@@ -25,6 +25,7 @@ export default function ReviewDetails({navigation}) {
     <Modal visible={modalOpen}>
     <View style={styles.modalContent}>
     <Text>Demo Modal </Text>
+    <Button title="Close" onPress={() =>setModalOpen(false)} />
     </View>
     </Modal>
     <View style={styles.card}>
