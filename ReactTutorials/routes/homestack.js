@@ -6,13 +6,13 @@ const screens = {
   Home: {
     screen: Home,
     navigationOptions: {
-      title: 'GameZone',
+      title: 'Menu',
     }
   },
   ReviewDetails: {
     screen: ReviewDetails,
     navigationOptions: {
-      title: 'Review Details',
+      title: 'Menu  Details',
     }
   },
 };
